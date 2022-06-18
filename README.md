@@ -1,7 +1,7 @@
 # Juliaの遊び場
 
 <p align="center">
-<img src="https://github.com/hydrocoast/MyPlaygroundJulia/blob/master/ex1_vanderPol_eps1.gif", width="700">
+<img src="https://github.com/hydrocoast/MyPlaygroundJulia/blob/main/ex1_vanderPol_eps1.gif", width="800">
 </p>  
 
 ## 概要
