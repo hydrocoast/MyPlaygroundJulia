@@ -23,6 +23,10 @@
 *.zip
 *.gz
 *.log
+*.aux
+*.tex
+*.bib
+*.bbl
 *.doc*
 *.xls*
 fort.*
