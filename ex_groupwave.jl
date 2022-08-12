@@ -56,12 +56,12 @@ end
 ## plot
 anim = @animate for it = vcat(ones(Int64,10,1),collect(Int64,1:nt),nt*ones(Int64,10,1))
     @printf("%04d / %04d\r", it, nt)
-    plt = plot(; label="", xlabel=L"x", ylabel=L"\eta", guidefont=16, tickfont=("Times",12), 
+    plt = plot(; label="", xlabel=L"x", ylabel=L"\eta", guidefont=12, tickfont=("Times",10), 
                title=@sprintf("%03d s",t[it]), titlefont=16, xlims=extrema(x), ylims=(-2a,2*a),
-               size=(1200,600), margin=10*Plots.PlotMeasures.mm)
-    plt = plot!(plt, x, η₁[:,it]; label=L"\eta_1", legendfontsize=18)
-    plt = plot!(plt, x, η₂[:,it]; label=L"\eta_2")
-    plt = plot!(plt, x, η₁₂[:,it]; label=L"\eta_{12}")
+               size=(600,300), margin=2*Plots.PlotMeasures.mm)
+    plt = plot!(plt, x, η₁[:,it]; label=L"\eta_1(k_1)", legendfontsize=10)
+    plt = plot!(plt, x, η₂[:,it]; label=L"\eta_2(k_2=k_1+\Delta k)")
+    plt = plot!(plt, x, η₁₂[:,it]; label=L"\eta_{1}+\eta_{2}")
     plt = plot!(plt, x, ηg[:,it]; lc=:gray, lw=1.0, label="")
     plt = plot!(plt, x, -ηg[:,it]; lc=:gray, lw=1.0, label="")
 end
