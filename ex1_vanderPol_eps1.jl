@@ -45,7 +45,7 @@ anim = @animate for it = vcat(ones(Int64,4,1),collect(Int64,1:100:nt),nt*ones(In
     pltA = annotate!(pltA, 35, 1.4, Plots.text(@sprintf("\$ x _0 = %0.2f\$",x₀), :right, :middle))
     pltB = plot(x[1:it],v[1:it]; label="", xlabel=L"x", ylabel=L"v", guidefont=16, tickfont=("Times",12), title="Van der Pol oscillator", titlefont=("Times",16))
     pltB = plot!(pltB, [x[it]],[v[it]]; label="", marker=:circle, mfc=:orange, ms=6, xlims=(-2.2,2.2), ylims=(-2.2,2.2))
-    pltG = plot(pltB, pltA, layout=(1,2), size=(1200,600))
+    pltG = plot(pltB, pltA, layout=(1,2), size=(1200,600), margin=5*Plots.PlotMeasures.mm)
 end
 
 ## save
