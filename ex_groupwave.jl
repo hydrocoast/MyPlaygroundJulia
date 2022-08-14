@@ -57,8 +57,8 @@ end
 anim = @animate for it = vcat(ones(Int64,10,1),collect(Int64,1:nt),nt*ones(Int64,10,1))
     @printf("%04d / %04d\r", it, nt)
     plt = plot(; label="", xlabel=L"x", ylabel=L"\eta", guidefont=12, tickfont=("Times",10), 
-               title=@sprintf("%03d s",t[it]), titlefont=16, xlims=extrema(x), ylims=(-2a,2*a),
-               size=(600,300), margin=2*Plots.PlotMeasures.mm)
+               title=@sprintf("%03d s",t[it]), titlefont=14, xlims=extrema(x), ylims=(-2a,2*a),
+               size=(800,400), margin=3*Plots.PlotMeasures.mm)
     plt = plot!(plt, x, η₁[:,it]; label=L"\eta_1(k_1)", legendfontsize=10)
     plt = plot!(plt, x, η₂[:,it]; label=L"\eta_2(k_2=k_1+\Delta k)")
     plt = plot!(plt, x, η₁₂[:,it]; label=L"\eta_{1}+\eta_{2}")
@@ -67,6 +67,6 @@ anim = @animate for it = vcat(ones(Int64,10,1),collect(Int64,1:nt),nt*ones(Int64
 end
 
 ## save
-gifname = "test_groupwaves.gif"
+gifname = "test_groupvelocity.gif"
 if isfile(gifname); rm(gifname); end
 gif(anim, gifname, fps=25)
